@@ -1,0 +1,13 @@
+# Composer dependencies (restored via `composer install`)
+/vendor/
+
+# Generated pipeline artifacts
+/data.json
+/data/
+
+# Local Claude Code settings
+/.claude/settings.local.json
+
+# OS / editor cruft
+.DS_Store
+*.swp

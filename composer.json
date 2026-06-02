@@ -1,0 +1,30 @@
+{
+    "name": "duckdb/import-export",
+    "description": "DuckDB Import/Export playground",
+    "type": "project",
+    "require": {
+        "fakerphp/faker": "^1.24",
+        "satur.io/duckdb-auto": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vasyl",
+            "email": "vasyl.pominchuk@bigcommerce.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "satur.io/duckdb-auto": false
+        }
+    },
+    "scripts": {
+        "install-duckdb-clib": "Saturio\\DuckDB\\CLib\\Installer::install",
+        "post-install-cmd": "@install-duckdb-clib",
+        "post-update-cmd": "@install-duckdb-clib"
+    }
+}
