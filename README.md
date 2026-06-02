@@ -102,15 +102,17 @@ Output (truncated):
 {
     "page": 1,
     "rows_per_page": 10,
-    "total": 3000000,
-    "total_pages": 300000,
+    "count": {
+        "total_rows": 3000000,
+        "returned": 10,
+        "total_pages": 300000
+    },
     "order_by": "field_1,field_3",
     "data": [ { "id": 1, "field_1": "…", ... } ],
     "stats": {
         "elapsed_ms": 115.16,
         "count_ms": 9.42,
         "fetch_ms": 47.59,
-        "rows_returned": 10,
         "files_in_dataset": 60,
         "peak_memory_mb": 2
     }

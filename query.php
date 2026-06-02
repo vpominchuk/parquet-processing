@@ -39,15 +39,17 @@ try {
     echo json_encode([
         'page' => $page,
         'rows_per_page' => $rowsPerPage,
-        'total' => $total,
-        'total_pages' => (int) ceil($total / $rowsPerPage),
+        'count' => [
+            'total_rows' => $total,
+            'returned' => count($data),
+            'total_pages' => (int) ceil($total / $rowsPerPage),
+        ],
         'order_by' => $orderBy ?? 'id',
         'data' => $data,
         'stats' => [
             'elapsed_ms' => elapsedMs($started),
             'count_ms' => $countMs,
             'fetch_ms' => $fetchMs,
-            'rows_returned' => count($data),
             'files_in_dataset' => $files,
             'peak_memory_mb' => round(memory_get_peak_usage(true) / 1048576, 1),
         ],
